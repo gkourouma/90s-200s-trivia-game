@@ -70,16 +70,18 @@ let currentQuestion = 0;
 let score = 0;
 let displayScreen = "welcome page";
 /*------------------------ Cached Element References ------------------------*/
-const nextButton = document.getElementsByClassName("next-button");
-const question = document.getElementsByClassName("questions");
-const choices = document.getElementsByClassName("choices");
-const finalScore = document.getElementsByClassName("final-score");
-const startButton = document.getElementsByClassName("start-button");
-const restartButton = document.getElementsByClassName("restart");
-const finalMessage = document.getElementsByClassName("final-message");
-const questionContainer = document.getElementsByClassName("container");
-const scoreContainer = document.getElementsByClassName("score");
+const nextButton = document.querySelector(".next-button");
+const question = document.querySelector(".questions");
+const choices = document.querySelector(".choices");
+const finalScore = document.querySelector(".final-score");
+const startButton = document.querySelector(".start-button");
+const restartButton = document.querySelector(".restart");
+const finalMessage = document.querySelector(".final-message");
+const questionContainer = document.querySelector(".container");
+const scoreContainer = document.querySelector(".score");
 const welcomeMessage = document.getElementById("welcome-message");
+
+console.log(finalScore);
 /*-------------------------------- Functions --------------------------------*/
 // First hide screens that are not needed
 function render() {
@@ -97,4 +99,22 @@ function render() {
     scoreContainer.classList.remove("hidden");
   }
 }
+
 /*----------------------------- Event Listeners -----------------------------*/
+//event listeners that will move through the different screens
+startButton.addEventListener("click", function () {
+  displayScreen = "questions";
+  render();
+});
+
+nextButton.addEventListener("click", function () {
+  displayScreen = "score page";
+  render();
+});
+
+restartButton.addEventListener("click", function () {
+  displayScreen = "welcome page";
+  render();
+});
+
+render();
