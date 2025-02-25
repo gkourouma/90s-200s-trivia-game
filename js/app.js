@@ -72,8 +72,8 @@ let score = 0;
 let displayScreen = "welcome page";
 /*------------------------ Cached Element References ------------------------*/
 const nextButton = document.querySelector(".next-button");
-const question = document.querySelector(".questions");
-const choices = document.querySelector(".choices");
+const questionText = document.querySelector(".questions");
+const choicesContainer = document.querySelector(".answers");
 const finalScore = document.querySelector(".final-score");
 const startButton = document.querySelector(".start-button");
 const restartButton = document.querySelector(".restart");
@@ -98,6 +98,16 @@ function render() {
     welcomeMessage.classList.add("hidden");
     questionContainer.classList.add("hidden");
     scoreContainer.classList.remove("hidden");
+
+    if (finalScore <= 3) {
+      finalMessage.textContent = "Try harder";
+    } else if (finalScore > 3 && finalScore <= 7) {
+      finalMessage.textContent = "You're Alight ";
+    } else {
+      finalMessage.textContent = "Totally Cool!";
+    }
+
+    finalScore.textContent = `Your Final Score is ${score}/${questions.length}`;
   }
 }
 
@@ -105,30 +115,57 @@ function render() {
 
 function getQuestions() {
   if (questionsLeft.length === 0) {
-    displayScreen = 'score page'
+    displayScreen = "score page";
     render();
     return;
   }
-  let index = Math.floor(Math.random() * questionsLeft.length) // select a random question that has'nt been selected yet
+  let index = Math.floor(Math.random() * questionsLeft.length); // select a random question that has'nt been selected yet
   currentQuestion = questionsLeft.splice(index, 1)[0];
 
+  displayQuestion();
 }
 
+// Displaying the answers
 
+function displayQuestion() {
+  questionText.textContent = currentQuestion.question;
+  choicesContainer.innerHTML = " ";
+
+  currentQuestion.choices.forEach((choice) => {
+    const button = document.createElement("button");
+    button.classList.add("button-choices");
+    button.textContent = choice;
+    button.onclick = function () {
+      showAnswer(choice);
+    };
+    choicesContainer.appendChild(button);
+  });
+}
+
+// Checking Answers and getting next question
+
+function showAnswer(selectedAnswer) {
+  if (selectedAnswer === currentQuestion.answer) {
+    score++;
+  }
+  getQuestions();
+}
 /*----------------------------- Event Listeners -----------------------------*/
 //event listeners that will move through the different screens
 startButton.addEventListener("click", function () {
   displayScreen = "questions";
   render();
+  getQuestions();
 });
 
 nextButton.addEventListener("click", function () {
-  displayScreen = "score page";
-  render();
+  getQuestions();
 });
 
 restartButton.addEventListener("click", function () {
   displayScreen = "welcome page";
+  score = 0;
+  questionsLeft = [...questions];
   render();
 });
 
