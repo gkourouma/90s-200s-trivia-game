@@ -66,7 +66,8 @@ const questions = [
   },
 ];
 /*---------------------------- Variables (state) ----------------------------*/
-let currentQuestion = 0;
+let currentQuestion;
+let questionsLeft = [...questions]; // an array of the questions that has'nt been answered.
 let score = 0;
 let displayScreen = "welcome page";
 /*------------------------ Cached Element References ------------------------*/
@@ -99,6 +100,20 @@ function render() {
     scoreContainer.classList.remove("hidden");
   }
 }
+
+//looping through random questions
+
+function getQuestions() {
+  if (questionsLeft.length === 0) {
+    displayScreen = 'score page'
+    render();
+    return;
+  }
+  let index = Math.floor(Math.random() * questionsLeft.length) // select a random question that has'nt been selected yet
+  currentQuestion = questionsLeft.splice(index, 1)[0];
+
+}
+
 
 /*----------------------------- Event Listeners -----------------------------*/
 //event listeners that will move through the different screens
