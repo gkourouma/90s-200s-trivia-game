@@ -39,8 +39,9 @@ const questions = [
   },
   {
     question: "What early 2000 Disney Channel show is this sound from?",
-    choices: [],
-    answer: "",
+    choices: ['Lizzie McGuire', 'Kim Possible', "That's So Raven", "Even Stevens"],
+    answer: "Kim Possible",
+    audio: "/audio/kim_possible_tone.mp3"
   },
   {
     question:
@@ -81,6 +82,7 @@ const finalMessage = document.querySelector(".final-message");
 const questionContainer = document.querySelector(".container");
 const scoreContainer = document.querySelector(".score");
 const welcomeMessage = document.getElementById("welcome-message");
+const questionAudio = document.getElementById('questions-audio')
 
 console.log(finalScore);
 /*-------------------------------- Functions --------------------------------*/
@@ -140,6 +142,13 @@ function displayQuestion() {
     };
     choicesContainer.appendChild(button);
   });
+
+  if (currentQuestion.audio) {
+    questionAudio.src = currentQuestion.audio
+    questionAudio.style.display = 'block'
+  } else{
+    questionAudio.style.display = 'none'
+  }
 }
 
 // Checking Answers and getting next question

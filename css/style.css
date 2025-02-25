@@ -67,6 +67,16 @@
   font-size: 30px;
 }
 
+.questions{
+  padding: 10px;
+  text-align: center;
+}
+
+#questions-audio{
+  margin-top: 50px;
+  width: 20vw;
+}
+
 .button-choices {
   display: flex;
   justify-content: center;
