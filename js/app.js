@@ -70,7 +70,7 @@ const questions = [
   },
   {
     question: "What was the first reality TV show to air on MTV in 1992?",
-    choices: ["The Real Word", "The Challenge", "Real TV", "The Cut"],
+    choices: ["The Real World", "The Challenge", "Real TV", "The Cut"],
     answer: "The Real World",
     image: 'images/mtv.jpg'
   },
@@ -80,6 +80,7 @@ let currentQuestion;
 let questionsLeft = [...questions]; // an array of the questions that has'nt been answered.
 let score = 0;
 let displayScreen = "welcome page";
+
 /*------------------------ Cached Element References ------------------------*/
 const nextButton = document.querySelector(".next-button");
 const questionText = document.querySelector(".questions");
@@ -93,7 +94,7 @@ const scoreContainer = document.querySelector(".score");
 const welcomeMessage = document.getElementById("welcome-message");
 const questionAudio = document.getElementById('questions-audio')
 const questionImage = document.getElementById('questions-image')
-// console.log(finalScore);
+
 /*-------------------------------- Functions --------------------------------*/
 // First hide screens that are not needed
 function render() {
@@ -110,16 +111,16 @@ function render() {
     questionContainer.classList.add("hidden");
     scoreContainer.classList.remove("hidden");
 
-    if (finalScore <= 3) {
-      finalMessage.textContent = "Try harder";
-    } else if (finalScore > 3 && finalScore <= 7) {
-      finalMessage.textContent = "You're Alight ";
-    } else {
-      finalMessage.textContent = "Totally Cool!";
-    }
-
     finalScore.textContent = `Your Final Score is ${score}/${questions.length}`;
   }
+}
+
+if (finalScore <= 3) {
+  finalMessage.textContent = "Try harder";
+} else if (finalScore > 3 && finalScore <= 7) {
+  finalMessage.textContent = "You're Alight ";
+} else {
+  finalMessage.textContent = "Totally Cool!";
 }
 
 //looping through random questions
