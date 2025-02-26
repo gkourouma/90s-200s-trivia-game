@@ -28,8 +28,8 @@
 
 #welcome-message {
   background-color: rgba(24, 202, 202, 0.902);
-  width: 800px;
-  height: 800px;
+  width: 1000px;
+  height: 950px;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -56,8 +56,8 @@
 
 #container {
   background-color: rgba(0, 255, 255, 0.916);
-  width: 800px;
-  height: 800px;
+  width: 1000px;
+  height: 950px;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -72,8 +72,12 @@
   text-align: center;
 }
 
+#questions-image{
+  width: 20vw;
+}
+
 #questions-audio{
-  margin-top: 50px;
+  margin-top: 10px;
   width: 20vw;
 }
 
@@ -107,8 +111,8 @@
 
 .score {
   background-color: rgba(235, 181, 235, 0.921);
-  width: 800px;
-  height: 800px;
+  width: 1000px;
+  height: 950px;
   position: absolute;
   display: flex;
   justify-content: center;

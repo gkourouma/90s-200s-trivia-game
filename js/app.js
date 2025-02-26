@@ -9,22 +9,26 @@ const questions = [
       "Oops!... I Did It Again",
     ],
     answer: "Baby One More Time",
+    image: ""
   },
   {
     question: "Which boy band released the hit song Bye Bye Bye in 2000?",
     choices: ["NSYNC", "Backstreet Boys", "98 Degrees", "Jonas Brothers"],
     answer: "NSYNC",
+    image: 'images/bye-bye-bye.webp'
   },
   {
     question: "In 'The Matrix' what color pill did Neo take?",
     choices: ["Blue", "Yellow", "Red", "Green"],
     answer: "Red",
+    image: 'images/the-matrix.jpg'
   },
   {
     question:
       "In Home Alone (1990), Which city does the McCallister family fly to for their Christmas vacation?",
     choices: ["Miami", "New York", "Paris", "Chicago"],
     answer: "Paris",
+    image: 'images/home-alone-gingers.jpg'
   },
   {
     question:
@@ -36,11 +40,13 @@ const questions = [
       "Central Perk",
     ],
     answer: "Central Perk",
+    image: 'images/friends-cafe.avif'
   },
   {
     question: "What early 2000 Disney Channel show is this sound from?",
     choices: ['Lizzie McGuire', 'Kim Possible', "That's So Raven", "Even Stevens"],
     answer: "Kim Possible",
+    image: "images/Disney_Channel_(2010).svg.png",
     audio: "/audio/kim_possible_tone.mp3"
   },
   {
@@ -53,17 +59,20 @@ const questions = [
     question: 'What game introduced the phrase "Finish Him!"?',
     choices: ["Street Fighter", "Tekken", "Grand Theft Auto", "Mortal Kombat"],
     answer: "Mortal Kombat",
+    image: 'images/mortal-kombat.jpg'
   },
   {
     question:
       "What was the name of the virtual pet craze that took over the late 90s?",
     choices: ["Nano Baby", "Tamagotchi", "Chia Pets", "Neopets"],
     answer: "Tamagotchi",
+    image: ""
   },
   {
     question: "What was the first reality TV show to air on MTV in 1992?",
     choices: ["The Real Word", "The Challenge", "Real TV", "The Cut"],
     answer: "The Real World",
+    image: 'images/mtv.jpg'
   },
 ];
 /*---------------------------- Variables (state) ----------------------------*/
@@ -83,8 +92,8 @@ const questionContainer = document.querySelector(".container");
 const scoreContainer = document.querySelector(".score");
 const welcomeMessage = document.getElementById("welcome-message");
 const questionAudio = document.getElementById('questions-audio')
-
-console.log(finalScore);
+const questionImage = document.getElementById('questions-image')
+// console.log(finalScore);
 /*-------------------------------- Functions --------------------------------*/
 // First hide screens that are not needed
 function render() {
@@ -149,6 +158,14 @@ function displayQuestion() {
   } else{
     questionAudio.style.display = 'none'
   }
+
+  if(currentQuestion.image){
+    questionImage.src = currentQuestion.image
+    questionImage.style.display = 'block'
+  } else {
+    questionImage.style.display = 'none'
+  }
+  
 }
 
 // Checking Answers and getting next question
