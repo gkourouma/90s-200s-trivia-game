@@ -35,20 +35,28 @@ body {
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.503);
   font-size: larger;
   text-align: center;
   line-height: 70px;
 }
 
+.welcome-image {
+  border-radius: 5px;
+}
+
 .start-button {
   padding: 12px 24px;
   border-radius: 20px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.503);
   margin-top: 50px;
   transition: 0.5s;
 }
 
 .start-button:hover {
-  background-color: plum;
+  background-color: rgb(221, 160, 221);
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.503);
+  transform: scale(1.2);
   color: white;
   cursor: pointer;
 }
@@ -64,10 +72,11 @@ body {
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.503);
   font-size: 30px;
 }
 
-#category{
+#category {
   border: 2px dashed black;
   border-radius: 20px;
   padding: 10px;
@@ -84,6 +93,7 @@ body {
   width: 20vw;
   height: auto;
   margin-top: 10px;
+  border-radius: 5px;
 }
 
 #questions-audio {
@@ -98,11 +108,15 @@ body {
   margin-top: 50px;
   width: 20vw;
   border-radius: 20px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.503);
+  transition: 0.5s;
   font-size: clamp(20px, 2.5vw, 2rem);
 }
 
 .button-choices:hover {
   background-color: plum;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.503);
+  transform: scale(1.1);
   color: white;
   cursor: pointer;
 }
@@ -117,6 +131,7 @@ body {
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.503);
   gap: 50px;
   font-size: larger;
   text-align: center;
@@ -126,11 +141,15 @@ body {
 .restart {
   border: 1px solid black;
   border-radius: 15px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.503);
   padding: 10px;
+  transition: 0.5 ease;
 }
 
 .restart:hover {
   background-color: rgba(24, 202, 202, 0.778);
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.503);
+  transform: scale(1.2);
   color: white;
   cursor: pointer;
 }

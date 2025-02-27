@@ -17,7 +17,7 @@ const questions = [
     question: "Which boy band released the hit song Bye Bye Bye in 2000?",
     choices: ["NSYNC", "Backstreet Boys", "98 Degrees", "Jonas Brothers"],
     answer: "NSYNC",
-    image: "images/bye-bye-bye.webp",
+    image: "images/Justin-Timberlake-Jt-GIF-by-NSYNC.gif",
     imageAlt: "Boy band dressed up as puppets",
     category: "Music 🎵",
   },
@@ -25,7 +25,7 @@ const questions = [
     question: "In 'The Matrix' what color pill did Neo take?",
     choices: ["Blue", "Yellow", "Red", "Green"],
     answer: "Red",
-    image: "images/the-matrix.jpg",
+    image: "images/matrix-neo.gif",
     imageAlt: "Morpheus sitting in a big red chair",
     category: "Movies 🍿",
   },
@@ -34,7 +34,7 @@ const questions = [
       "In Home Alone (1990), Which city does the McCallister family fly to for their Christmas vacation?",
     choices: ["Miami", "New York", "Paris", "Chicago"],
     answer: "Paris",
-    image: "images/home-alone-gingers.jpg",
+    image: "images/home-alone-christmas-movies-GIF.gif",
     imageAlt: "Group picture of all of the McCallister siblings in pajamas",
     category: "Movies 🍿",
   },
@@ -48,7 +48,7 @@ const questions = [
       "Central Perk",
     ],
     answer: "Central Perk",
-    image: "images/friends-cafe.avif",
+    image: "images/season-1-friends-GIF.gif",
     imageAlt: "Cast of friends hanging out at coffee shop",
     category: "TV Shows 📺",
   },
@@ -72,14 +72,14 @@ const questions = [
     choices: ["Bowser", "Captain Falcon", "Pikachu", "Ness"],
     answer: "Bowser",
     image: "images/super-smash-bros-GIF.gif",
-    imageAlt: "",
+    imageAlt: "Super Smash Bros Game start screen",
     category: "Games 🎮",
   },
   {
     question: 'What game introduced the phrase "Finish Him!"?',
     choices: ["Street Fighter", "Tekken", "Grand Theft Auto", "Mortal Kombat"],
     answer: "Mortal Kombat",
-    image: "images/mortal-kombat.jpg",
+    image: "images/Finish-Him-Mortal-Kombat-GIF.gif",
     imageAlt: "Finish Him game screen",
     category: "Games 🎮",
   },
@@ -96,7 +96,7 @@ const questions = [
     question: "What was the first reality TV show to air on MTV in 1992?",
     choices: ["The Real World", "The Challenge", "Real TV", "The Cut"],
     answer: "The Real World",
-    image: "images/mtv.jpg",
+    image: "images/mtv-80s-GIF.gif",
     imageAlt: "MTV logo",
     category: "TV Shows 📺",
   },
@@ -121,7 +121,7 @@ const welcomeMessage = document.getElementById("welcome-message");
 const questionAudio = document.getElementById("questions-audio");
 const questionImage = document.getElementById("questions-image");
 const scoreImage = document.getElementById("score-image");
-const gameCategory = document.getElementById("category")
+const gameCategory = document.getElementById("category");
 
 /*-------------------------------- Functions --------------------------------*/
 // First hide screens that are not needed
@@ -177,7 +177,7 @@ function getQuestions() {
 // Displaying the answers
 
 function displayQuestion() {
-  gameCategory.textContent = `${currentQuestion.category}`
+  gameCategory.textContent = `${currentQuestion.category}`;
   questionText.textContent = currentQuestion.question;
   choicesContainer.innerHTML = " ";
 
