@@ -10,21 +10,24 @@ const questions = [
     ],
     answer: "Baby One More Time",
     image: "",
-    category: 'Music',
+    imageAlt: "",
+    category: "Music",
   },
   {
     question: "Which boy band released the hit song Bye Bye Bye in 2000?",
     choices: ["NSYNC", "Backstreet Boys", "98 Degrees", "Jonas Brothers"],
     answer: "NSYNC",
     image: "images/bye-bye-bye.webp",
-    category: 'Music',
+    imageAlt: "Boy band dressed up as puppets",
+    category: "Music",
   },
   {
     question: "In 'The Matrix' what color pill did Neo take?",
     choices: ["Blue", "Yellow", "Red", "Green"],
     answer: "Red",
     image: "images/the-matrix.jpg",
-    category: 'Movies',
+    imageAlt: "Morpheus sitting in a big red chair",
+    category: "Movies",
   },
   {
     question:
@@ -32,7 +35,8 @@ const questions = [
     choices: ["Miami", "New York", "Paris", "Chicago"],
     answer: "Paris",
     image: "images/home-alone-gingers.jpg",
-    category: 'Movies',
+    imageAlt: "Group picture of all of the McCallister siblings in pajamas",
+    category: "Movies",
   },
   {
     question:
@@ -45,7 +49,8 @@ const questions = [
     ],
     answer: "Central Perk",
     image: "images/friends-cafe.avif",
-    category: 'TV Shows'
+    imageAlt: "Cast of friends hanging out at coffee shop",
+    category: "TV Shows",
   },
   {
     question: "What early 2000 Disney Channel show is this sound from?",
@@ -57,40 +62,43 @@ const questions = [
     ],
     answer: "Kim Possible",
     image: "images/Disney_Channel_(2010).svg.png",
+    imageAlt: "Disney Channel logo",
     audio: "/audio/kim_possible_tone.mp3",
-    category: 'TV Shows'
+    category: "TV Shows",
   },
   {
     question:
       "In Super Smash Bros. Melee (2001), which character was not part of the original Super Smash Bros. (1999) roster?",
     choices: ["Bowser", "Captain Falcon", "Pikachu", "Ness"],
     answer: "Bowser",
-    image: 'images/mario.png',
-    category: 'Games'
+    image: "images/mario.png",
+    imageAlt: "",
+    category: "Games",
   },
   {
     question: 'What game introduced the phrase "Finish Him!"?',
     choices: ["Street Fighter", "Tekken", "Grand Theft Auto", "Mortal Kombat"],
     answer: "Mortal Kombat",
     image: "images/mortal-kombat.jpg",
-    category: 'Games'
+    imageAlt: "Finish Him game screen",
+    category: "Games",
   },
   {
     question:
       "What was the name of the virtual pet craze that took over the late 90s?",
     choices: ["Nano Baby", "Tamagotchi", "Chia Pets", "Neopets"],
     answer: "Tamagotchi",
-    image: "images/game (3).png",
-    category: 'Games'
-
+    image: "images/Tired-Pixel-Art-Sticker.gif",
+    imageAlt: "Yellow and Pink Tomagotchi Toy with dancing pet.",
+    category: "Games",
   },
   {
     question: "What was the first reality TV show to air on MTV in 1992?",
     choices: ["The Real World", "The Challenge", "Real TV", "The Cut"],
     answer: "The Real World",
     image: "images/mtv.jpg",
-    category: 'TV Shows'
-
+    imageAlt: "MTV logo",
+    category: "TV Shows",
   },
 ];
 /*---------------------------- Variables (state) ----------------------------*/
@@ -112,7 +120,7 @@ const scoreContainer = document.querySelector(".score");
 const welcomeMessage = document.getElementById("welcome-message");
 const questionAudio = document.getElementById("questions-audio");
 const questionImage = document.getElementById("questions-image");
-const scoreImage = document.getElementById('score-image')
+const scoreImage = document.getElementById("score-image");
 
 /*-------------------------------- Functions --------------------------------*/
 // First hide screens that are not needed
@@ -136,18 +144,18 @@ function render() {
 }
 
 function updateFinalMessage() {
-  if (score <= 3) {
+  if (score <= 4) {
     finalMessage.textContent = "Try harder... 🙄";
-    scoreImage.src = "images/Epic-Fail-Lol-Sticker-by-Demic.gif"
-    scoreImage.style.display = "block"
-  } else if (score > 3 && score <= 7) {
-    finalMessage.textContent = "You're Alright ";
-    scoreImage.src ="images/Not-Bad-Sticker-by-Beverley-Mitchell.gif"
-    scoreImage.style.display = "block"
+    scoreImage.src = "images/Epic-Fail-Lol-Sticker-by-Demic.gif";
+    scoreImage.style.display = "block";
+  } else if (score > 4 && score <= 7) {
+    finalMessage.textContent = "You're Alright 🙂";
+    scoreImage.src = "images/Not-Bad-Sticker-by-Beverley-Mitchell.gif";
+    scoreImage.style.display = "block";
   } else {
-    finalMessage.textContent = "Totally Cool!";
-    scoreImage.src = "images/90S-1990S-Sticker-by-Ruck-Rover.gif"
-    scoreImage.style.display = "block"
+    finalMessage.textContent = "Totally Cool! 💯";
+    scoreImage.src = "images/90S-1990S-Sticker-by-Ruck-Rover.gif";
+    scoreImage.style.display = "block";
   }
 }
 
@@ -190,6 +198,7 @@ function displayQuestion() {
 
   if (currentQuestion.image) {
     questionImage.src = currentQuestion.image;
+    questionImage.alt = currentQuestion.imageAlt;
     questionImage.style.display = "block";
   } else {
     questionImage.style.display = "none";
