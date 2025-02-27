@@ -9,8 +9,6 @@ const questions = [
       "Oops!... I Did It Again",
     ],
     answer: "Baby One More Time",
-    image: "",
-    imageAlt: "",
     category: "Music 🎵",
   },
   {
