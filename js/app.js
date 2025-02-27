@@ -11,7 +11,7 @@ const questions = [
     answer: "Baby One More Time",
     image: "",
     imageAlt: "",
-    category: "Music",
+    category: "Music 🎵",
   },
   {
     question: "Which boy band released the hit song Bye Bye Bye in 2000?",
@@ -19,7 +19,7 @@ const questions = [
     answer: "NSYNC",
     image: "images/bye-bye-bye.webp",
     imageAlt: "Boy band dressed up as puppets",
-    category: "Music",
+    category: "Music 🎵",
   },
   {
     question: "In 'The Matrix' what color pill did Neo take?",
@@ -27,7 +27,7 @@ const questions = [
     answer: "Red",
     image: "images/the-matrix.jpg",
     imageAlt: "Morpheus sitting in a big red chair",
-    category: "Movies",
+    category: "Movies 🍿",
   },
   {
     question:
@@ -36,7 +36,7 @@ const questions = [
     answer: "Paris",
     image: "images/home-alone-gingers.jpg",
     imageAlt: "Group picture of all of the McCallister siblings in pajamas",
-    category: "Movies",
+    category: "Movies 🍿",
   },
   {
     question:
@@ -50,7 +50,7 @@ const questions = [
     answer: "Central Perk",
     image: "images/friends-cafe.avif",
     imageAlt: "Cast of friends hanging out at coffee shop",
-    category: "TV Shows",
+    category: "TV Shows 📺",
   },
   {
     question: "What early 2000 Disney Channel show is this sound from?",
@@ -64,16 +64,16 @@ const questions = [
     image: "images/Disney_Channel_(2010).svg.png",
     imageAlt: "Disney Channel logo",
     audio: "/audio/kim_possible_tone.mp3",
-    category: "TV Shows",
+    category: "TV Shows 📺",
   },
   {
     question:
       "In Super Smash Bros. Melee (2001), which character was not part of the original Super Smash Bros. (1999) roster?",
     choices: ["Bowser", "Captain Falcon", "Pikachu", "Ness"],
     answer: "Bowser",
-    image: "images/mario.png",
+    image: "images/super-smash-bros-GIF.gif",
     imageAlt: "",
-    category: "Games",
+    category: "Games 🎮",
   },
   {
     question: 'What game introduced the phrase "Finish Him!"?',
@@ -81,16 +81,16 @@ const questions = [
     answer: "Mortal Kombat",
     image: "images/mortal-kombat.jpg",
     imageAlt: "Finish Him game screen",
-    category: "Games",
+    category: "Games 🎮",
   },
   {
     question:
       "What was the name of the virtual pet craze that took over the late 90s?",
     choices: ["Nano Baby", "Tamagotchi", "Chia Pets", "Neopets"],
     answer: "Tamagotchi",
-    image: "images/Tired-Pixel-Art-Sticker.gif",
-    imageAlt: "Yellow and Pink Tomagotchi Toy with dancing pet.",
-    category: "Games",
+    image: "images/upside-down-tamagotchi-Sticker.gif",
+    imageAlt: "Purple and Pink Tomagotchi Toy with upside down pet.",
+    category: "Games 🎮",
   },
   {
     question: "What was the first reality TV show to air on MTV in 1992?",
@@ -98,7 +98,7 @@ const questions = [
     answer: "The Real World",
     image: "images/mtv.jpg",
     imageAlt: "MTV logo",
-    category: "TV Shows",
+    category: "TV Shows 📺",
   },
 ];
 /*---------------------------- Variables (state) ----------------------------*/
@@ -121,6 +121,7 @@ const welcomeMessage = document.getElementById("welcome-message");
 const questionAudio = document.getElementById("questions-audio");
 const questionImage = document.getElementById("questions-image");
 const scoreImage = document.getElementById("score-image");
+const gameCategory = document.getElementById("category")
 
 /*-------------------------------- Functions --------------------------------*/
 // First hide screens that are not needed
@@ -176,6 +177,7 @@ function getQuestions() {
 // Displaying the answers
 
 function displayQuestion() {
+  gameCategory.textContent = `${currentQuestion.category}`
   questionText.textContent = currentQuestion.question;
   choicesContainer.innerHTML = " ";
 
