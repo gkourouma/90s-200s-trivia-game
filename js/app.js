@@ -61,7 +61,7 @@ const questions = [
     answer: "Kim Possible",
     image: "images/Disney_Channel_(2010).svg.png",
     imageAlt: "Disney Channel logo",
-    audio: "/audio/kim_possible_tone.mp3",
+    audio: "audio/kim_possible_tone.mp3",
     category: "TV Shows 📺",
   },
   {
@@ -143,6 +143,7 @@ function render() {
   }
 }
 
+// Update final message, image, and audio based on score
 function updateFinalMessage() {
   if (score <= 4) {
     finalMessage.textContent = "Try harder... 🙄";
@@ -161,11 +162,12 @@ function updateFinalMessage() {
     scoreAudio.src = "audio/brass-fanfare-reverberated-146263.mp3";
   }
   setTimeout(() => {
+    scoreAudio.volume = 0.2;
     scoreAudio.play();
   }, 500);
 }
 
-//looping through random questions
+//looping through random questions that has'nt been answered yet
 
 function getQuestions() {
   if (questionsLeft.length === 0) {
@@ -179,7 +181,7 @@ function getQuestions() {
   displayQuestion();
 }
 
-// Displaying the answers
+// Displaying the questions and answers
 
 function displayQuestion() {
   gameCategory.textContent = `${currentQuestion.category}`;
@@ -232,6 +234,7 @@ restartButton.addEventListener("click", function () {
   displayScreen = "welcome page";
   score = 0;
   questionsLeft = [...questions];
+  currentQuestion = null;
   render();
 });
 
