@@ -2,7 +2,8 @@
 
 ![Trivia Game Welcome Screen](images/Trivia-Game-Welcome-Page.png)
 
-Welcome to 90's / 2000s Trivia Time. A 10 question trivia game that test your knowledge on categories such as movies, music, games, and tv shows from the 90's and early 2000s. Click start and let's see if you can score a 10/10!
+Welcome to 90's / 2000s Trivia Time. A 10 question trivia game that test your knowledge on categories such as movies, music, games, and tv shows from the 90's and early 2000s. Click the link below and let's see if you can score a 10/10!
+> https://gkourouma.github.io/90s-200s-trivia-game/
 
 # How to Play 🎮
 
