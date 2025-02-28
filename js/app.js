@@ -101,7 +101,7 @@ const questions = [
 ];
 /*---------------------------- Variables (state) ----------------------------*/
 let currentQuestion;
-let questionsLeft = [...questions]; // an array of the questions that has'nt been answered.
+let questionsLeft = [...questions];
 let score = 0;
 let displayScreen = "welcome page";
 
@@ -120,6 +120,7 @@ const questionAudio = document.getElementById("questions-audio");
 const questionImage = document.getElementById("questions-image");
 const scoreImage = document.getElementById("score-image");
 const gameCategory = document.getElementById("category");
+const scoreAudio = document.getElementById("score-audio");
 
 /*-------------------------------- Functions --------------------------------*/
 // First hide screens that are not needed
@@ -147,15 +148,21 @@ function updateFinalMessage() {
     finalMessage.textContent = "Try harder... 🙄";
     scoreImage.src = "images/Epic-Fail-Lol-Sticker-by-Demic.gif";
     scoreImage.style.display = "block";
+    scoreAudio.src = "audio/cartoon-trombone-sound-effect-241387.mp3";
   } else if (score > 4 && score <= 7) {
     finalMessage.textContent = "You're Alright 🙂";
     scoreImage.src = "images/Not-Bad-Sticker-by-Beverley-Mitchell.gif";
     scoreImage.style.display = "block";
+    scoreAudio.src = "audio/level-win-6416.mp3";
   } else {
     finalMessage.textContent = "Totally Cool! 💯";
     scoreImage.src = "images/90S-1990S-Sticker-by-Ruck-Rover.gif";
     scoreImage.style.display = "block";
+    scoreAudio.src = "audio/brass-fanfare-reverberated-146263.mp3";
   }
+  setTimeout(() => {
+    scoreAudio.play();
+  }, 500);
 }
 
 //looping through random questions

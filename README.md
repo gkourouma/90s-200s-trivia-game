@@ -31,3 +31,10 @@ The rules are simple!
 - 💡 User will be able to select which category they want to play
 - 🏆 Leaderboard
 - ⏳ Speed round with timer!
+
+# Attributions
+
+- Sound Effect by <a href="https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=6416">freesound_community</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=6416">Pixabay</a>
+
+- Sound Effect by <a href="https://pixabay.com/users/u_ss015dykrt-26759154/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=146263">u_ss015dykrt</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=146263">Pixabay</a>
+  Sound Effect by u_ss015dykrt from Pixabay
